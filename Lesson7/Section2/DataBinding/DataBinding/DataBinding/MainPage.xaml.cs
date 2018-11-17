@@ -19,5 +19,11 @@ namespace DataBinding
             await Navigation.PushAsync(new Clock());
 
         }
+
+        private async void Keypad_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Keypad());
+
+        }
     }
 }

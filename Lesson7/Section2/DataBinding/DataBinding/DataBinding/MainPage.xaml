@@ -23,7 +23,8 @@
                FontSize="Large"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
-        <Button Clicked="Button_Clicked" Text="Navigate"></Button>
+        <Button Clicked="Button_Clicked" Text="Timer"></Button>
+        <Button Clicked="Keypad_Clicked" Text="Keypad"></Button>
     </StackLayout>
 
 
