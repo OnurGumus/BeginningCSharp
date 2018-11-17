@@ -1,0 +1,1 @@
+﻿select * from Customers where not exists (select 1 from Orders where Orders.CustomerId = Customers.Id);
