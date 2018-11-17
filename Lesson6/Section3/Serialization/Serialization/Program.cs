@@ -4,7 +4,7 @@ using System.IO;
 
 namespace Serialization
 {
-    class GameScore
+    public class GameScore
     {
         public string PlayerName { get; set; }
         public int BestAttempt { get; set; }
@@ -15,7 +15,7 @@ namespace Serialization
         }
     }
 
-    class Game
+    public class Game
     {
         protected const string filename = "Highscore.txt";
 
