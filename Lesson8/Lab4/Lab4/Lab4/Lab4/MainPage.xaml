@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Lab4"
+             x:Class="Lab4.MainPage" Padding="50">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Make your guess"/>
+        <StackLayout Orientation="Horizontal">
+            <Entry WidthRequest="400"  x:Name="GuessText"></Entry>
+            <Button Clicked="Button_Clicked" Text="Enter"></Button>
+
+        </StackLayout>
+        <Editor HeightRequest="400" InputTransparent="True"  x:Name="Output"></Editor>
+        <Button Clicked="Restart_Clicked" Text="Restart"></Button>
+    </StackLayout>
+
+</ContentPage>
