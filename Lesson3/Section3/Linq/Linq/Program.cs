@@ -19,7 +19,7 @@ namespace Linq
 
             var sumOfNumbersDivisbleByFive =
                 (from x in items
-                 where x % 5 == 5
+                 where x % 5 == 0
                  let i = x.ToString().Length
                  select i).Sum();
 
