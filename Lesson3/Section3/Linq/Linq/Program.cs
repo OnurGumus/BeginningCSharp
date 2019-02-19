@@ -11,11 +11,11 @@ namespace Linq
 
             //even numbers
 
-            var evenNumbers = items.Where(x => x % 2 == 0).ToList();
+            var oddNumbers = items.Where(x => x % 2 == 0).Select(x=> x+ 1).ToList();
 
             Func<int, bool> oddFilter = x => x % 2 == 1;
 
-            var oddNumbers = items.Where(oddFilter).ToList();
+            oddNumbers = items.Where(oddFilter).ToList();
 
             var sumOfNumbersDivisbleByFive =
                 (from x in items
@@ -26,12 +26,10 @@ namespace Linq
 
             var firstNumberDivisbleBy7 = items.First(i => i % 7 == 0);
             var lastNumberDivisbleBy7 = items.Last(i => i % 7 == 0);
-
             int firstNumberDivisbleby101 = items.FirstOrDefault(x => x % 101 == 0);
 
 
             var itemsQ = items.AsQueryable();
-
             var multiplicationOfOddnumbers = itemsQ.Where(x => x % 2 == 1).Aggregate(1, (x, y) => x * y);
 
 

@@ -25,6 +25,4 @@ namespace KeywordsClasses
 
         public string S { get; set; }
     }
-
-
 }

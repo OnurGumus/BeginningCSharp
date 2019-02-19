@@ -13,11 +13,18 @@ namespace StringsDemo
             var hello = "hello";
             var world = "world";
             var helloWorld = hello + world;
-            helloWorld = $"{hello}{world}";
-            var escape = "\n\r\t\"";
+            helloWorld = $"{hello}f{world}";
+            var builder = new StringBuilder();
+            builder.Append("d");
+            var s = string.Format("One = {0}", 1);
+
+            var escape = "\n\r\t\"" + Environment.NewLine;
+            Console.WriteLine(escape);
             var nonescape = @"\n\r\t""";
+            Console.WriteLine(nonescape);
             var nonEscape2 = @"Hello
 World";
+            Console.WriteLine(nonEscape2);
             var myDouble = "5,4";
             var turkishCulture = CultureInfo.GetCultureInfo("tr-TR");
             Console.WriteLine(Double.Parse(myDouble, CultureInfo.InvariantCulture));
@@ -51,7 +58,7 @@ World";
                 where fruitLetter == 'a'
                 select fruit;
 
-            foreach(var fruit in fruitsContainingA.Distinct())
+            foreach(var fruit in fruitsContainingA)
             {
                 Console.WriteLine(fruit);
             }

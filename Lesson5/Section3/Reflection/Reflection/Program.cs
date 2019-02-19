@@ -64,11 +64,15 @@ namespace Reflection
             Car toyota = new Toyota();
             Console.WriteLine(toyota.GetType().Name);
             Console.WriteLine(toyota.GetType().GetInterfaces()[0]);
+
             toyota.GetType().GetMethod("Run").Invoke(toyota, Array.Empty<object>());
+
+
            var value = toyota.GetType().GetField("speed", System.Reflection.BindingFlags.NonPublic
                 | System.Reflection.BindingFlags.Instance).GetValue(toyota);
 
             Console.WriteLine(value);
+            var t = Activator.CreateInstance(Type.GetType("Reflection.Toyota"));
 
         }
     }

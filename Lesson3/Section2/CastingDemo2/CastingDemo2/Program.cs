@@ -51,6 +51,6 @@ namespace CastingDemo2
             => new Currency(i);
 
         public static explicit operator int(Currency c)
-            => c.Value
+            => c.Value;
     }
 }

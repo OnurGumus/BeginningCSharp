@@ -15,7 +15,10 @@ namespace Car
         public Car(int initialFuel)
         {
             this.fuel = initialFuel;
+            this.maxSpeed = 101;
+
         }
+
         public int Fuel => this.fuel;
 
         public int Speed
@@ -76,6 +79,9 @@ namespace Car
             var car = new Car(100);
             car.AddSpeed(20);
             Thread.Sleep(1000);
+            car.AddFuel(10);
+            car.AddFuel(10);
+            car.AddSpeed(5);
             car.AddFuel(10);
 
             Console.ReadLine();

@@ -10,16 +10,20 @@ namespace EntitityFramework
 {
     public class ShoppingContext : DbContext
     {
-        static readonly LoggerFactory loggerFactory =
-            new LoggerFactory(new[] { new ConsoleLoggerProvider((_, level) => level == LogLevel.Information, true) });
-        public DbSet<Customer> Customers { get; private set; }
-        public DbSet<Order> Orders { get; private set; }
+        static readonly ILoggerFactory loggerFactory =
+            LoggerFactory.Create(builder => builder.AddConsole());
 
+        #nullable disable
+        public DbSet<Customer> Customers { get; private set; }
+
+        public DbSet<Order> Orders { get; private set; }
+        #nullable enable
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
                 .UseLoggerFactory(loggerFactory)
-                .UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ShoppingDB;Integrated Security=True;");
+                .UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=ShoppingDB;Integrated Security=True;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,15 +42,15 @@ namespace EntitityFramework
 
         public int Id { get; private set; }
 
-        public string CustomerName { get; set; }
+        public string? CustomerName { get; set; }
 
         public IList<Order> Orders => this.orders;
     }
 
     public class Order
     {
-        public int Id { get; set; }
-        public string Item { get; set; }
+        public int Id { get; private set; }
+        public string? Item { get; set; }
 
         public decimal Price { get; set; }
     }
@@ -100,6 +104,15 @@ namespace EntitityFramework
 
         private static async Task AddOrders()
         {
+
+            try
+            {
+                //some code
+            }
+            finally
+            {
+                //call Dispose method.
+            }
             using (var db = new ShoppingContext())
             {
                 var customer1 = new Customer() { CustomerName = "Onur" };
