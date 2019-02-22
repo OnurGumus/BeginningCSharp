@@ -13,7 +13,6 @@ namespace XAML
         {
             InitializeComponent();
         }
-
         private void Button_Clicked(object sender, EventArgs e)
         {
             this.MyLabel.Text = DateTime.Now.ToString();

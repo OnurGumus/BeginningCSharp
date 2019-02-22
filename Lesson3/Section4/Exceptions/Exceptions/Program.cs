@@ -1,17 +1,18 @@
 ﻿using System;
-
+using System.IO;
+#nullable enable
 namespace Exceptions
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var length  = Length("Hello World!");
 
             try
             {
                 var length2 = Length(null);
             }
+#nullable disable
             catch (InvalidOperationException e)
             {
                 Console.WriteLine(e);
@@ -35,7 +36,7 @@ namespace Exceptions
             }
         }
 
-        static int Length (string s)
+        static int Length(string? s)
         {
             if (s == null)
                 throw new ArgumentNullException(nameof(s));

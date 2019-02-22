@@ -7,6 +7,7 @@ namespace Tasks
 {
     class Program
     {
+        static readonly HttpClient httpClient = new HttpClient();
         async static Task Main(string[] args)
         {
 
@@ -36,7 +37,7 @@ namespace Tasks
 
         public async static Task<string> GetContent(string url)
         {
-            var httpClient = new HttpClient();
+           
             var res = await httpClient.GetAsync(url);
             return await res.Content.ReadAsStringAsync();
 

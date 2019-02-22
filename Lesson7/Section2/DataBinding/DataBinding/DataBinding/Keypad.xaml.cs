@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace DataBinding
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Keypad : ContentPage
-	{
-		public Keypad ()
-		{
-			InitializeComponent ();
-		}
-	}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Keypad : ContentPage
+    {
+        public Keypad()
+        {
+            InitializeComponent();
+        }
+    }
 }

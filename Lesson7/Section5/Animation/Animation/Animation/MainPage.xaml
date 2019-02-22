@@ -5,13 +5,10 @@
              x:Class="Animation.MainPage">
 
     <StackLayout>
+        <!-- Place new controls here -->
         <StackLayout Margin="0,20,0,0">
-
-            <Image x:Name="image" Source="capture.png" VerticalOptions="CenterAndExpand" />
-
+            <Image x:Name="image"  Source="Capture.PNG" VerticalOptions="CenterAndExpand" />
             <Button x:Name="startButton" Text="Start Animation" Clicked="StartButton_Clicked" VerticalOptions="End" />
-
-
         </StackLayout>
     </StackLayout>
 

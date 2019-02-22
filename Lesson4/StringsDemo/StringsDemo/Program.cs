@@ -13,7 +13,7 @@ namespace StringsDemo
             var hello = "hello";
             var world = "world";
             var helloWorld = hello + world;
-            helloWorld = $"{hello}f{world}";
+            helloWorld = $"{hello} {world}";
             var builder = new StringBuilder();
             builder.Append("d");
             var s = string.Format("One = {0}", 1);

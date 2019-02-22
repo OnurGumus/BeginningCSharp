@@ -13,17 +13,10 @@ namespace Animation
         {
             InitializeComponent();
         }
-
-        private  async void StartButton_Clicked(object sender, EventArgs e)
+        private async void StartButton_Clicked(object sender, EventArgs e)
         {
             await image.RotateTo(360, 2000);
             image.Rotation = 0;
         }
-
-
-
-
-
-
     }
 }

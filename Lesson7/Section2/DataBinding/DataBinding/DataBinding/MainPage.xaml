@@ -27,5 +27,4 @@
         <Button Clicked="Keypad_Clicked" Text="Keypad"></Button>
     </StackLayout>
 
-
 </ContentPage>

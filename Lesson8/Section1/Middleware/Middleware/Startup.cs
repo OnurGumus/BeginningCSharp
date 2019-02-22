@@ -25,9 +25,12 @@ namespace Middleware
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
+            app.UseRouting(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("Hello World!");
+                });
             });
         }
     }

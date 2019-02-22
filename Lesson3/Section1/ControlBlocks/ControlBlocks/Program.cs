@@ -4,11 +4,22 @@ using System.Linq;
 
 namespace ControlBlocks
 {
+    struct X {  }
+    class MyClass{
+        int x;
+    }
     class Program
     {
+        static bool CheckString(string s)
+        {
+            return true;
+        }
         static void Main(string[] args)
         {
-            if (Console.ReadLine() is var x && x == "hello")
+            if (
+                Console.ReadLine() is var x && 
+                CheckString(x) && 
+                x == "hello")
             {
                 int i = 0;
                 do
@@ -97,6 +108,7 @@ namespace ControlBlocks
             {
                 for (var c = start; c < end; c++)
                     yield return c;
+                yield return 'a';
             }
         }
     }
